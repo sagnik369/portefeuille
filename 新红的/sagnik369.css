@@ -1,0 +1,195 @@
+html {
+    scroll-behavior: smooth;
+}
+
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: white; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: lightseagreen; 
+  }
+  
+    ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+body {
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-name: fadeIn;
+    margin: 0;
+    font-family: 'Klee One', cursive;
+}
+
+hr {
+    background-color: khaki;
+    margin: 120px;
+}
+
+.navbar {
+    background: rgb(149,192,207);
+    background: linear-gradient(245deg, rgba(149,192,207,1) 0%, rgba(185,220,235,1) 53%, rgba(248,244,252,1) 100%);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 0px 20px lightslategray;
+    z-index: 1;
+}
+
+.navbar-brand > img {
+    margin: 15px;
+    width: 55px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.navbar-brand > img:hover {
+    margin: 14.2px;
+    border: 0.8px dashed lightcyan;
+}
+
+.navbar-item > a {
+    color: grey;
+    font-size: 00.856rem;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.navbar-item > a:hover {
+    border: 0.8px dashed lightcyan;
+    border-radius: 5px;
+    padding: 9px;
+}
+
+.navbar-item > a:active {
+    border: 0.8px dashed rgb(168, 214, 230, 0.2);
+    color: rgb(168, 214, 230);
+}
+
+.navbar-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin-right: 2rem;
+}
+
+#hero {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#hero > p {
+    font-style: italic;
+    font-size: 5rem;
+    font-weight: 100;
+    color: honeydew;
+    position: absolute;
+}
+
+#hero > img {
+    margin-top: 100px;
+    width: 100%;
+    max-height: 100vh;
+}
+
+#hero > div {
+    position: absolute;
+    background: rgb(248,244,252);
+    background: radial-gradient(circle, rgba(248,244,252,0) 0%, rgba(248,244,252,0) 55%, rgba(0,0,0,1) 100%);
+    width: 100%;
+    height: 100%;
+
+}
+
+#exp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+#heading {
+    margin-top: 130px;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.javascript {
+    height: 100px;
+}
+
+.javascript > img {
+    height: 100%;
+}
+
+#exp > img {
+    width: 130px;
+    height: 130px;
+}
+
+#contact {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 800;
+    margin-top: 200px;
+}
+
+.footer {
+    text-align: center;
+    background: rgb(149,192,207);
+    background: linear-gradient(50deg, rgba(149,192,207,1) 0%, rgba(185,220,235,1) 53%, rgba(248,244,252,1) 100%);
+    height: 100px;
+    margin-top: 200px;
+    padding: 50px;
+    font-size: 1em;
+    font-weight: 700;
+    box-shadow: 0px 0px 20px lightslategray;
+}
+
+#works {
+    margin: 100px;
+    padding-top: 130px;
+}
+
+#works > a {
+    color: black;
+    text-decoration: none;
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#works > p {
+    margin: 50px;
+    margin-bottom: 100px;
+}
+
+#works > a:active {
+    background-color: lightgray;
+    color: lightslategray;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
