@@ -3,6 +3,7 @@ html {
 }
 
   ::-webkit-scrollbar {
+	z-index: -10;
     width: 3px;
   }
   
@@ -101,7 +102,7 @@ hr {
 }
 
 #hero > img {
-    margin-top: 85px;
+    margin-top: 86px;
     width: 100%;
     max-height: 100vh;
 }
