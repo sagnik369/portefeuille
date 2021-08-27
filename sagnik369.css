@@ -3,9 +3,16 @@ html {
 }
 
 ::-webkit-scrollbar {
+  ::-webkit-appearance: none;
+}
+
+::-webkit-scrollbar:vertical {
   z-index: -10;
   width: 3px;
-  height: 0px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 0;
 }
 
 ::-webkit-scrollbar-track {
@@ -93,7 +100,7 @@ hr {
 .navbar-item > a {
   background-color: rgba(149, 192, 207, 0.75);
   border-radius: 5px;
-  color: white;
+  color: black;
   font-size: 00.856rem;
   padding: 12.2px 25.2px 12.2px 25.2px;
   text-decoration: none;
