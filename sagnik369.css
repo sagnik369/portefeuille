@@ -1,17 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 html {
+  -ms-scroll-snap-type: y proximity;
+  scroll-snap-type: y proximity;
+  font-size: 62.5%;
   scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-  ::-webkit-appearance: none;
-}
-
-::-webkit-scrollbar:vertical {
   z-index: -10;
   width: 3px;
-}
-
-::-webkit-scrollbar:horizontal {
   height: 0;
 }
 
@@ -28,9 +30,72 @@ html {
 }
 
 body {
-  margin: 0;
+  box-sizing: border-box;
   font-family: "Klee One", cursive;
   overflow-x: hidden;
+}
+
+.main-body {
+  opacity: 0;
+  animation-name: body-appear;
+  animation-duration: 2s;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+
+body > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 80px 0;
+  position: fixed;
+  z-index: -5;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  animation-name: sec-disp;
+  animation-duration: 1s;
+  animation-delay: 5s;
+  animation-fill-mode: forwards;
+}
+
+.box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  box-shadow: 0 0 25px grey;
+  border: 7px solid whitesmoke;
+  overflow: hidden;
+}
+
+.box::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://www.tattoomenow.com/tattoo-designs/wp-content/uploads/2018/08/letter-s-tattoo-template-01.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.waves {
+  position: absolute;
+  z-index: -1;
+  width: 400px;
+  height: 400px;
+  background-color: black;
+  border-radius: 35%;
+  animation-name: wave-move;
+  animation-duration: 10s;
+  animation-delay: .1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
 }
 
 main:first-of-type {
@@ -99,9 +164,10 @@ hr {
 
 .navbar-item > a {
   background-color: rgba(149, 192, 207, 0.75);
+  border: 0.8px dashed rgba(0, 0, 0, 0);
   border-radius: 5px;
   color: black;
-  font-size: 00.856rem;
+  font-size: 1rem;
   padding: 12.2px 25.2px 12.2px 25.2px;
   text-decoration: none;
 }
@@ -129,6 +195,7 @@ hr {
   position: relative;
   justify-content: center;
   align-items: center;
+  scroll-snap-align: start;
 }
 
 #hero > p {
@@ -136,11 +203,12 @@ hr {
   letter-spacing: 5px;
   white-space: nowrap;
   font-style: italic;
-  font-size: 4em;
+  font-size: 4.4rem;
   font-weight: 100;
   color: honeydew;
   position: absolute;
   animation-duration: 2.8s;
+  animation-delay: 5s;
   animation-name: lts;
 }
 
@@ -174,7 +242,10 @@ hr {
   height: 100%;
 }
 
-#trans {
+#hero > div:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  top: 99%;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 0%,
@@ -187,11 +258,12 @@ hr {
 #heading {
   margin-top: 130px;
   font-weight: 600;
-  font-size: 1.5em;
+  font-size: 2rem;
   text-align: center;
 }
 
 #expert {
+  scroll-snap-align: start;
   padding-top: 50px;
 }
 
@@ -263,24 +335,39 @@ hr {
 }
 
 #works {
-  margin: 0px 100px 100px 100px;
-  padding-top: 125px;
+  scroll-snap-align: start;
+  margin: 150px 100px;
+  scroll-margin: 150px;
 }
 
 #works > a {
-  border: 1px solid green;
   color: green;
   text-decoration: none;
+  position: relative;
   border-radius: 10px;
-  padding: 7px 25px 7px 25px;
+  font-size: 1.4rem;
+  padding: 7px 25px;
 }
 
-#works > a:active {
-  border: none;
+#works > a::after, #works > a::before {
+  content: '';
+  border: 1px solid green;
+  border-radius: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
 }
 
-#works > p {
-  margin: 50px 50px 100px 50px;
+
+#works > a:hover::after{
+  transform: translate(7px, -7px);
+}
+
+#works > a:hover::before{
+  transform: translate(-7px, 7px);
 }
 
 #works > a:active {
@@ -288,33 +375,47 @@ hr {
   color: lightslategray;
 }
 
+#works > a:active::after{
+  border: none;
+  transform: translate(0);
+}
+
+#works > a:active::before{
+  border: none;
+  transform: translate(0);
+}
+
+
+#works > p {
+  margin: 50px 50px 100px 50px;
+  font-size: 1.3rem;
+}
+
+.final-resl {
+  font-size: 30px;
+  font-weight: 700;
+}
+
 #contact {
   text-align: center;
-  font-size: 2.3em;
+  font-size: 2.3rem;
   font-weight: 800;
   margin: 200px 50px 160px 50px;
   color: red;
+  scroll-snap-align: start;
 }
 
 .footer {
   text-align: center;
   background-color: lightcyan;
-  height: 100px;
+  height: 170px;
   padding: 50px;
-  font-size: 1em;
+  font-size: 1rem;
   font-weight: 700;
   box-shadow: 0px 0px 20px lightslategray;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0.2;
-  }
 
-  100% {
-    opacity: 1;
-  }
-}
 
 @media (max-width: 600px) {
   .navbar-icons {
@@ -324,7 +425,7 @@ hr {
 
   .navbar-item > a {
     padding: 7.2px 17.2px 7.2px 17.2px;
-    font-size: 0.67em;
+    font-size: 0.8rem;
   }
 
   .navbar-item > a:active {
@@ -334,8 +435,9 @@ hr {
 
   #hero > p {
     animation-duration: 2.5s;
+    animation-delay: 5s;
     animation-name: ltsl;
-    font-size: 2em;
+    font-size: 2.7rem;
   }
 
   #hero > div:nth-of-type(1) {
@@ -363,7 +465,7 @@ hr {
 
   #heading {
     margin-top: 60px;
-    font-size: 1em;
+    font-size: 1.7rem;
   }
 
   #exp > img {
@@ -376,43 +478,52 @@ hr {
   }
 
   #works {
-    margin: 30px;
-    padding-top: 110px;
+    margin: 60px 30px;
   }
 
   #works > a {
-    font-size: 0.99em;
+    font-size: 0.94rem;
     padding: 10px;
     margin-bottom: 30px;
   }
 
   #works > p {
-    font-size: 0.89em;
+    font-size: 0.84rem;
     margin: 30px 30px 90px 30px;
   }
 
   #contact {
-    font-size: 1.65em;
+    font-size: 1.85rem;
     font-weight: 800;
     margin: 160px 30px 180px 30px;
   }
 
   .footer {
-    height: 100%;
+    height: 165px;
     margin-top: 90px;
     padding: 50px;
-    font-size: 0.667em;
+    font-size: 0.777rem;
     font-weight: 700;
   }
 
-  @keyframes ltsl {
-    0% {
-      letter-spacing: 20px;
-    }
-    100% {
-      letter-spacing: 100%;
-    }
+@keyframes fadeIn {
+  0% {
+    opacity: 0.2;
   }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ltsl {
+  0% {
+    letter-spacing: 20px;
+  }
+  100% {
+    letter-spacing: 100%;
+  }
+}
 }
 
 @keyframes lts {
@@ -421,5 +532,35 @@ hr {
   }
   100% {
     letter-spacing: 100%;
+  }
+}
+
+@keyframes wave-move {
+  0% {
+      transform: translateY(0) rotate(0deg);
+  }
+  45% {
+      transform: translateY(-100%) rotate(320deg);
+  }
+  100% {
+      transform: translateY(-1000%) rotate(0);
+  }
+}
+
+@keyframes sec-disp {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+@keyframes body-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
