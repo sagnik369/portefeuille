@@ -49,7 +49,7 @@ body > section {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  margin: 80px 0;
+  margin: 75px 0;
   position: fixed;
   z-index: -5;
   background-color: black;
@@ -425,7 +425,7 @@ hr {
 
   .navbar-item > a {
     padding: 7.2px 17.2px 7.2px 17.2px;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .navbar-item > a:active {
@@ -482,13 +482,13 @@ hr {
   }
 
   #works > a {
-    font-size: 0.94rem;
+    font-size: 1.1rem;
     padding: 10px;
     margin-bottom: 30px;
   }
 
   #works > p {
-    font-size: 0.84rem;
+    font-size: 1rem;
     margin: 30px 30px 90px 30px;
   }
 
@@ -499,7 +499,7 @@ hr {
   }
 
   .footer {
-    height: 165px;
+    height: 150px;
     margin-top: 90px;
     padding: 50px;
     font-size: 0.777rem;
