@@ -32,7 +32,6 @@ html {
 body {
   box-sizing: border-box;
   font-family: "Klee One", cursive;
-  overflow-x: hidden;
 }
 
 .main-body {
@@ -43,7 +42,7 @@ body {
   animation-fill-mode: forwards;
 }
 
-body > section {
+.loader {
   display: flex;
   justify-content: center;
   align-items: center;
